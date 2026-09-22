@@ -57,7 +57,7 @@ export function ExportStep({
   }
 
   return (
-    <div className="mx-auto max-w-[960px] animate-fade-up space-y-4">
+    <div className="mx-auto max-w-full animate-fade-up space-y-4">
       {/* Interactive Toast Notification */}
       {toastMessage && (
         <div className="fixed top-5 right-5 z-50 flex items-center gap-3 rounded-2xl border border-forest/30 bg-primary-dark px-5 py-3.5 text-white shadow-2xl animate-scale-in">
@@ -69,9 +69,9 @@ export function ExportStep({
       )}
 
       <Card padded={false} className="overflow-hidden shadow-[0_20px_45px_rgba(23,19,15,0.07)]">
-        <div className="grid lg:grid-cols-[.92fr_1.08fr]">
+        <div className="grid lg:grid-cols-[.60fr_1.08fr]">
           {/* Left Dark Column */}
-          <div className="flex flex-col justify-between bg-primary-dark px-4 py-6 text-white">
+          <div className="flex flex-col justify-between bg-primary-dark px-4 py-4 md:px-8 md:py-8 text-white">
             <div>
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-forest/20 text-forest shadow-inner">
                 <CheckCircle2 size={34} strokeWidth={2} className="text-forest" />

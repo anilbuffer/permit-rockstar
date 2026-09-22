@@ -78,7 +78,7 @@ body {
 
 /* Blueprint grid texture — used behind plan canvases / dropzones,
    a nod to the construction-drawing subject matter. */
-. {
+.blueprint-grid {
   background-image:
     linear-gradient(var(--color-paper-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-paper-line) 1px, transparent 1px);
