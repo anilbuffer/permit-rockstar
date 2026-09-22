@@ -59,19 +59,19 @@ export function UploadStep({
             onDragLeave={() => setDragActive(false)}
             onDrop={handleDrop}
             className={clsx(
-              "blueprint-grid m-4 rounded-2xl border-2 border-dashed transition-colors",
+              "m-4 rounded-2xl border-2 border-dashed transition-colors",
               dragActive ? "border-primary bg-primary-soft/60" : "border-paper-line bg-paper/60"
             )}
           >
-            <div className="flex flex-col items-center justify-center px-6 py-14 text-center sm:py-16">
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary shadow-[0_8px_18px_rgba(0,85,127,0.2)]">
+            <div className="flex flex-col items-center justify-center px-4 py-4 text-center sm:py-8">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary shadow-[0_8px_18px_rgba(0,85,127,0.2)]">
                 <UploadCloud size={26} className="text-secondary" strokeWidth={1.75} />
               </div>
               <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-primary">
                 Source files
               </p>
               <h3 className="mt-2 text-[18px] font-semibold text-ink">Drop your plan set here</h3>
-              <p className="mt-1.5 max-w-[390px] text-[13.5px] text-slate">
+              <p className="mt-1.5 max-w-[390px] text-[13px] text-slate">
                 PDF files only. Upload a complete sheet set for the most accurate automated review.
               </p>
               <Button
