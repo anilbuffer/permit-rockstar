@@ -27,7 +27,14 @@ export function StepRail({ current }: { current: ReviewStepKey }) {
                 {state === "done" ? <Check size={16} strokeWidth={3} /> : step.index}
               </div>
               <div className="min-w-0 hidden sm:block">
-                <p className={clsx("truncate text-[13.5px] font-semibold leading-tight", state === "upcoming" ? "text-slate-soft" : "text-ink")}>
+                <p
+                  className={clsx(
+                    "truncate text-[13px] font-semibold leading-tight",
+                    state === "active" && "text-primary font-bold",
+                    state === "done" && "text-ink font-semibold",
+                    state === "upcoming" && "text-slate-soft"
+                  )}
+                >
                   {step.label}
                 </p>
                 <p className="mt-0.5 max-w-[180px] truncate text-[12px] leading-tight text-slate">
@@ -36,7 +43,12 @@ export function StepRail({ current }: { current: ReviewStepKey }) {
               </div>
             </div>
             {i < REVIEW_STEPS.length - 1 && (
-              <div className={clsx("mx-2 h-px flex-1 transition-colors sm:mx-4", i < currentIndex ? "bg-forest" : "bg-paper-line")} />
+              <div
+                className={clsx(
+                  "mx-2 h-px flex-1 transition-colors sm:mx-4",
+                  i < currentIndex ? "bg-forest" : "bg-paper-line"
+                )}
+              />
             )}
           </li>
         );

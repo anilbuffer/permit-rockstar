@@ -82,7 +82,8 @@ export function ReviewPlansWizard() {
     setStep("processing");
     setProcessingIndex(0);
     await mockRunProcessing((i) => setProcessingIndex(i));
-    setDocument(buildMockDocument(files[0]?.name ?? "Plan Set.pdf"));
+    const activeFileName = files[0]?.name ?? "Plan Set.pdf";
+    setDocument(buildMockDocument(activeFileName));
     setStep("annotate");
   }
 
@@ -113,8 +114,9 @@ export function ReviewPlansWizard() {
   const stepNumber = step === "upload" ? 1 : step === "processing" ? 2 : step === "annotate" ? 3 : 4;
 
   return (
-    <div className="space-y-6 sm:space-y-8">
-      <header className="flex flex-col gap-5 border-b border-paper-line pb-6 lg:flex-row lg:items-end lg:justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      {/* Header section like previous */}
+      <header className="flex flex-col gap-4 border-b border-paper-line pb-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-full">
           <p className="text-[11px] font-bold uppercase tracking-[0.13em] text-primary">
             Review plans <span className="mx-1.5 text-slate-soft">/</span> {copy.eyebrow}
@@ -126,8 +128,8 @@ export function ReviewPlansWizard() {
             {copy.description}
           </p>
         </div>
-        <div className="flex items-center gap-3 self-start rounded-xl border border-paper-line bg-paper-raised px-3.5 py-2.5 text-[12px] lg:self-auto">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft font-bold text-primary">
+        <div className="flex items-center gap-3 self-start rounded-xl border border-paper-line bg-paper-raised px-3.5 py-2.5 text-[12px] shadow-xs lg:self-auto">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-[12px] font-bold text-primary">
             {stepNumber}
           </span>
           <div>
@@ -137,8 +139,10 @@ export function ReviewPlansWizard() {
         </div>
       </header>
 
+      {/* Step Rail Progress indicator */}
       <StepRail current={step} />
 
+      {/* Step Content Views */}
       {step === "upload" && (
         <UploadStep
           files={files}

@@ -7,6 +7,10 @@
   --color-secondary: #f5b82e;
   --color-secondary-soft: #fdf0c8;
 
+  --color-rust: #c84b24;
+  --color-rust-dark: #a83a1a;
+  --color-rust-soft: #faebe6;
+
   /* Brand palette — grounded in the Permit Rockstar mark: ink black,
      permit gold, and a rust/clay accent that reads as construction
      without tipping into hi-vis orange. */
@@ -18,7 +22,8 @@
   --color-paper-raised: #ffffff;
   --color-paper-line: #e9e2d3;
 
-  --color-forest: #33562f;
+  --color-forest: #286e4e;
+  --color-forest-dark: #1e553c;
   --color-forest-soft: #dbe6d6;
 
   --color-alert: #ae2a1f;
@@ -27,6 +32,8 @@
   --color-slate: #5b5850;
   --color-slate-soft: #91897a;
 
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --animate-fade-up: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -38,6 +45,7 @@
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -49,6 +57,7 @@
     opacity: 0;
     transform: scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -69,7 +78,7 @@ body {
 
 /* Blueprint grid texture — used behind plan canvases / dropzones,
    a nod to the construction-drawing subject matter. */
-.blueprint-grid {
+. {
   background-image:
     linear-gradient(var(--color-paper-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-paper-line) 1px, transparent 1px);
@@ -89,6 +98,7 @@ body {
   letter-spacing: 0.04em;
   transform: rotate(-4deg);
 }
+
 .stamp::before {
   content: "";
   position: absolute;
@@ -104,6 +114,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

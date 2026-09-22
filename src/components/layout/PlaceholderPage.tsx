@@ -25,7 +25,7 @@ export function PlaceholderPage({
           </h1>
         </div>
 
-        <Card className="blueprint-grid flex flex-col items-center justify-center text-center py-20">
+        <Card className="flex flex-col items-center justify-center text-center py-20">
           <div className="h-14 w-14 rounded-2xl bg-primary flex items-center justify-center mb-5">
             <Icon size={24} className="text-secondary" strokeWidth={1.75} />
           </div>

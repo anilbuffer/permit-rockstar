@@ -1,7 +1,7 @@
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 import clsx from "clsx";
 
-type Variant = "primary" | "secondary" | "ghost" | "success" | "outline";
+type Variant = "primary" | "secondary" | "ghost" | "success" | "outline" | "rust" | "forest";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,6 +12,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const variantClasses: Record<Variant, string> = {
   primary:
     "bg-primary text-white hover:bg-primary-dark shadow-[0_1px_0_0_rgba(0,0,0,0.08)] disabled:bg-primary/40",
+  rust:
+    "bg-rust text-white hover:bg-rust-dark shadow-[0_2px_8px_rgba(200,75,36,0.25)] disabled:bg-rust/40",
+  forest:
+    "bg-forest text-white hover:bg-forest-dark shadow-[0_2px_8px_rgba(40,110,78,0.25)] disabled:bg-forest/40",
   secondary:
     "bg-secondary text-ink hover:brightness-95 disabled:bg-secondary/40",
   success:

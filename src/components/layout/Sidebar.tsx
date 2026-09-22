@@ -35,10 +35,10 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="relative hidden min-h-screen w-[260px] shrink-0 overflow-hidden bg-primary-dark text-white shadow-[14px_0_38px_rgba(0,62,93,0.12)] lg:flex lg:flex-col">
+    <aside className="sticky top-0 z-30 hidden h-screen w-[245px] shrink-0 overflow-hidden bg-primary-dark text-white shadow-[14px_0_38px_rgba(0,62,93,0.12)] lg:flex lg:flex-col">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(255,255,255,0.14),transparent_26%),radial-gradient(circle_at_100%_100%,rgba(245,184,46,0.17),transparent_32%)]" />
 
-      <div className="relative border-b border-white/[0.12] px-5 py-1">
+      <div className="relative border-b border-white/[0.12] px-5 py-3 flex items-center justify-center">
         <Link
           href="/review-plans"
           className="group block text-center rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary-dark"
@@ -49,7 +49,7 @@ export function Sidebar() {
             width={300}
             height={200}
             priority
-            className="h-auto max-w-[180px] mx-auto drop-shadow-[0_8px_14px_rgba(0,0,0,0.24)] transition-transform duration-200 group-hover:scale-[1.02]"
+            className="h-auto max-w-[170px] mx-auto drop-shadow-[0_8px_14px_rgba(0,0,0,0.24)] transition-transform duration-200 group-hover:scale-[1.02]"
           />
         </Link>
       </div>
