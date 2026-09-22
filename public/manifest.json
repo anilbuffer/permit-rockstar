@@ -1,0 +1,18 @@
+{
+  "name": "Permit Rockstar",
+  "short_name": "PermitRockstar",
+  "description": "Stop Waiting. Start Building. Construction permit management, plan review, and inspections in one portal.",
+  "start_url": "/review-plans",
+  "display": "standalone",
+  "background_color": "#faf7f1",
+  "theme_color": "#00557f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

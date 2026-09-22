@@ -1,0 +1,7 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="96" fill="#00557F"/>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#F5B82E" stroke-width="10" stroke-dasharray="4 14" stroke-linecap="round"/>
+  <text x="256" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="150" fill="#F5B82E">P</text>
+  <text x="256" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="150" fill="#F5B82E" dx="70">R</text>
+  <rect x="146" y="300" width="220" height="16" rx="8" fill="#F5B82E"/>
+</svg>

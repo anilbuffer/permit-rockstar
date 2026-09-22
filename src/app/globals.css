@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00557f;
+  --color-primary-dark: #003e5d;
+  --color-primary-soft: #d9edf6;
+  --color-secondary: #f5b82e;
+  --color-secondary-soft: #fdf0c8;
+
+  /* Brand palette — grounded in the Permit Rockstar mark: ink black,
+     permit gold, and a rust/clay accent that reads as construction
+     without tipping into hi-vis orange. */
+  --color-ink: #17130f;
+  --color-ink-soft: #221d17;
+  --color-ink-muted: #3a332a;
+
+  --color-paper: #faf7f1;
+  --color-paper-raised: #ffffff;
+  --color-paper-line: #e9e2d3;
+
+  --color-forest: #33562f;
+  --color-forest-soft: #dbe6d6;
+
+  --color-alert: #ae2a1f;
+  --color-alert-soft: #f4d9d4;
+
+  --color-slate: #5b5850;
+  --color-slate-soft: #91897a;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scale-in: scale-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-secondary-soft);
+  color: var(--color-ink);
+}
+
+/* Blueprint grid texture — used behind plan canvases / dropzones,
+   a nod to the construction-drawing subject matter. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--color-paper-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-paper-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Permit stamp badge motif — used for status pills */
+.stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid currentColor;
+  border-radius: 9999px;
+  padding: 0.2rem 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transform: rotate(-4deg);
+}
+.stamp::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+  opacity: 0.5;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-paper-line) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
