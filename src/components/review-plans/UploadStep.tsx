@@ -70,15 +70,15 @@ export function UploadStep({ files, onFilesAdded, onRemove, onProceed }: UploadS
           </div>
         </Card>
 
-        <Card className="flex flex-col justify-between bg-ink text-white shadow-[0_12px_30px_rgba(23,19,15,0.1)]">
+        <div className="flex flex-col justify-between rounded-2xl bg-ink p-6 text-white shadow-[0_12px_30px_rgba(23,19,15,0.1)]">
           <div>
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-secondary"><Files size={19} /></div>
-            <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.12em] text-white/55">A smoother review</p>
-            <h3 className="mt-2 text-[17px] font-semibold leading-snug">Include every related sheet in one upload.</h3>
-            <p className="mt-2 text-[13px] leading-relaxed text-white/65">We retain the file order and prepare a single review package for annotation.</p>
+            <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.12em] text-secondary">A smoother review</p>
+            <h3 className="mt-2 text-[17px] font-semibold leading-snug text-white">Include every related sheet in one upload.</h3>
+            <p className="mt-2 text-[13px] leading-relaxed text-white/80">We retain the file order and prepare a single review package for annotation.</p>
           </div>
-          <div className="mt-7 flex items-center gap-2 border-t border-white/10 pt-4 text-[12px] text-white/70"><ShieldCheck size={16} className="text-secondary" /> PDF plan sets only</div>
-        </Card>
+          <div className="mt-7 flex items-center gap-2 border-t border-white/15 pt-4 text-[12px] font-medium text-white/90"><ShieldCheck size={16} className="text-secondary" /> PDF plan sets only</div>
+        </div>
       </div>
 
       {hasFiles && (

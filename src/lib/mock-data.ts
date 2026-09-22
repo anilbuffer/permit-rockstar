@@ -38,7 +38,7 @@ export const REVIEW_STEPS: ReviewStep[] = [
   {
     key: "annotate",
     index: 3,
-    label: "Annotate",
+    label: "Annotate PDF",
     description: "Mark up corrections directly on the plans",
   },
   {

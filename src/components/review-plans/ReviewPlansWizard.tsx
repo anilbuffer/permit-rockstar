@@ -64,10 +64,10 @@ export function ReviewPlansWizard() {
         prev.map((f) =>
           f.id === id
             ? {
-                ...f,
-                uploadProgress: progress,
-                status: progress >= 100 ? "uploaded" : "uploading",
-              }
+              ...f,
+              uploadProgress: progress,
+              status: progress >= 100 ? "uploaded" : "uploading",
+            }
             : f
         )
       );
@@ -115,14 +115,14 @@ export function ReviewPlansWizard() {
   return (
     <div className="space-y-6 sm:space-y-8">
       <header className="flex flex-col gap-5 border-b border-paper-line pb-6 lg:flex-row lg:items-end lg:justify-between">
-        <div className="max-w-2xl">
+        <div className="max-w-full">
           <p className="text-[11px] font-bold uppercase tracking-[0.13em] text-primary">
             Review plans <span className="mx-1.5 text-slate-soft">/</span> {copy.eyebrow}
           </p>
-          <h1 className="mt-2 text-[28px] font-bold tracking-[-0.035em] text-ink sm:text-[32px]">
+          <h1 className="mt-1 text-[18px] font-bold tracking-[-0.035em] text-ink sm:text-[24px]">
             {copy.title}
           </h1>
-          <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-slate">
+          <p className="mt-1 max-w-full text-[12px] leading-relaxed text-slate">
             {copy.description}
           </p>
         </div>
