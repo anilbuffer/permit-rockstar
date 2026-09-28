@@ -1,13 +1,11 @@
-import { Stamp } from "lucide-react";
-import { PlaceholderPage } from "@/components/layout/PlaceholderPage";
+import { AppShell } from "@/components/layout/AppShell";
+import { StampWizard } from "@/components/stamp/StampWizard";
 
-export default function Page() {
+export default function StampPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Stamp"
-      title="Digital plan stamping"
-      description="Approve and digitally stamp reviewed plan sets"
-      icon={Stamp}
-    />
+    <AppShell>
+      <StampWizard />
+    </AppShell>
   );
 }
+
