@@ -1,13 +1,15 @@
-import { ClipboardCheck } from "lucide-react";
-import { PlaceholderPage } from "@/components/layout/PlaceholderPage";
+import { AppShell } from "@/components/layout/AppShell";
+import { PcaWizard } from "@/components/pca/PcaWizard";
 
-export default function Page() {
+export const metadata = {
+  title: "PCA Workflow | Permit Rockstar",
+  description: "Generate and customize Florida Private Provider Plan Compliance Affidavits.",
+};
+
+export default function PcaPage() {
   return (
-    <PlaceholderPage
-      eyebrow="PCA"
-      title="Plan correction analysis"
-      description="Run automated plan correction analysis across a submitted set"
-      icon={ClipboardCheck}
-    />
+    <AppShell>
+      <PcaWizard />
+    </AppShell>
   );
 }

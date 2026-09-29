@@ -1,13 +1,15 @@
-import { Building2 } from "lucide-react";
-import { PlaceholderPage } from "@/components/layout/PlaceholderPage";
+import { AppShell } from "@/components/layout/AppShell";
+import { CitiesEmailsView } from "@/components/cities-emails/CitiesEmailsView";
 
-export default function Page() {
+export const metadata = {
+  title: "Cities & Emails | Permit Rockstar",
+  description: "Manage city profiles, jurisdiction contacts, and email notification templates.",
+};
+
+export default function CitiesEmailsPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Cities & Emails"
-      title="Jurisdiction contacts"
-      description="Manage city contacts and email templates by jurisdiction"
-      icon={Building2}
-    />
+    <AppShell>
+      <CitiesEmailsView />
+    </AppShell>
   );
 }

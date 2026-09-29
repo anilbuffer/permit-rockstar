@@ -217,4 +217,179 @@ export interface StampExportResult {
   certificateHash: string;
 }
 
+// ---- PCA Workflow -----------------------------------------------------
+
+export type PcaStepKey =
+  | "upload"
+  | "processing"
+  | "review"
+  | "preview"
+  | "export";
+
+export interface PcaStep {
+  key: PcaStepKey;
+  index: number;
+  label: string;
+  description: string;
+  badge: string;
+}
+
+export type PcaTemplateType = "jacksonville" | "standard";
+export type PcaSignatureType = "embedded" | "manual";
+export type SheetViewMode = "individual" | "condense";
+
+export interface PcaSheetFile {
+  id: string;
+  name: string;
+  sizeBytes: number;
+  sheets: string[];
+  status?: "queued" | "uploading" | "uploaded";
+  uploadProgress?: number;
+}
+
+export interface PcaProvider {
+  id: string;
+  name: string;
+  title: string;
+  companyName: string;
+  licenseNumber: string;
+  phone: string;
+  email: string;
+  address: string;
+}
+
+export interface PcaNotary {
+  id: string;
+  name: string;
+  commissionNumber: string;
+  commissionExpires: string;
+}
+
+export interface SavedPcaReport {
+  id: string;
+  title: string;
+  template: PcaTemplateType;
+  signatureOption: PcaSignatureType;
+  providerName: string;
+  notaryName: string;
+  signedDate: string;
+  totalSheets: number;
+  sheetsFormatted: string;
+  fileName: string;
+  fileSizeLabel: string;
+  createdAt: string;
+}
+
+export interface SavedPcaRecord {
+  id: string;
+  permitNumber?: string;
+  projectAddress?: string;
+  city: string;
+  privateProvider: string;
+  contractor: string;
+  dateSaved: string;
+  template?: PcaTemplateType;
+  sheetsSummary?: string;
+  totalSheets?: number;
+  fileName?: string;
+  notes?: string;
+}
+
+// ---- Permit Inspection Workflow ---------------------------------------
+
+export type PermitInspectionStepKey = "lookup" | "form" | "preview";
+
+export interface InspectionStepConfig {
+  key: PermitInspectionStepKey;
+  index: number;
+  label: string;
+  description: string;
+  badge: string;
+}
+
+export type InspectionStatus = "Passed" | "Partial" | "Failed" | "Scheduled";
+
+export interface InspectionItem {
+  id: string;
+  code: string;
+  inspection: string;
+  status: InspectionStatus;
+  date: string;
+  inspector: string;
+  notes?: string;
+}
+
+export interface PermitLookupRecord {
+  id: string;
+  permitNumber: string;
+  projectAddress: string;
+  contractorName: string;
+  city: string;
+  lastActivity: string;
+  modificationDate: string;
+  privateProvider?: string;
+}
+
+export interface InspectionCodeItem {
+  code: string;
+  name: string;
+}
+
+export interface InspectionCity {
+  id: string;
+  name: string;
+  county: string;
+  email: string;
+  phone: string;
+  cityType?: string;
+  workflowSteps?: "One Step" | "Two Step";
+  emailRecipients?: string[];
+  inspectionCodes?: InspectionCodeItem[];
+  subjectTemplate?: string;
+  bodyTemplate?: string;
+  attachmentRequired?: boolean;
+}
+
+export interface InspectionContractor {
+  id: string;
+  name: string;
+  firstName?: string;
+  lastName?: string;
+  companyName: string;
+  identifierFormat?: "name" | "company" | "both";
+  licenseNumber: string;
+  licenses?: string[];
+  phone?: string;
+  email?: string;
+  address?: string;
+}
+
+export interface PermitInspectionFormData {
+  city: string;
+  permitNumber: string;
+  projectAddress: string;
+  countyDepartment: string;
+  providerId: string;
+  firmName: string;
+  qualifierName: string;
+  phone: string;
+  email: string;
+  contractorId: string;
+  contractorName: string;
+  contractorLicense: string;
+  contractorPhone: string;
+  contractorEmail: string;
+  inspections: InspectionItem[];
+}
+
+export interface InspectionEmailPayload {
+  fromEmail: string;
+  senderName: string;
+  replyTo: string;
+  toRecipients: string[];
+  ccRecipients: string[];
+  subject: string;
+  messageBody: string;
+}
+
 

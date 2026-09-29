@@ -1,13 +1,15 @@
-import { FolderCheck } from "lucide-react";
-import { PlaceholderPage } from "@/components/layout/PlaceholderPage";
+import { AppShell } from "@/components/layout/AppShell";
+import { SavedPcaTable } from "@/components/saved-pca/SavedPcaTable";
 
-export default function Page() {
+export const metadata = {
+  title: "Saved PCA Records | Permit Rockstar",
+  description: "View, search, and manage all private provider inspection certificates saved in the database.",
+};
+
+export default function SavedPcaPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Saved PCA"
-      title="Saved PCA reports"
-      description="Revisit and export plan correction analyses you have saved"
-      icon={FolderCheck}
-    />
+    <AppShell>
+      <SavedPcaTable />
+    </AppShell>
   );
 }
